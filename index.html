@@ -15,5 +15,26 @@
       <h1>Inspect HTTP requests in the browser</h1>
     </div>
   </header>
+
+  <main class="layout">
+    <form id="request-form" class="panel">
+      <div class="row">
+        <label>
+          Method
+          <select id="method" name="method">
+            <option>GET</option>
+            <option>POST</option>
+            <option>PUT</option>
+            <option>PATCH</option>
+            <option>DELETE</option>
+          </select>
+        </label>
+        <label class="grow">
+          URL
+          <input id="url" name="url" type="url" required placeholder="https://httpbingo.org/get" value="https://httpbingo.org/get" />
+        </label>
+      </div>
+    </form>
+  </main>
 </body>
 </html>
