@@ -34,6 +34,21 @@
           <input id="url" name="url" type="url" required placeholder="https://httpbingo.org/get" value="https://httpbingo.org/get" />
         </label>
       </div>
+
+      <label>
+        Headers (one per line: Name: Value)
+        <textarea id="headers" rows="4" placeholder="Accept: application/json"></textarea>
+      </label>
+
+      <label>
+        Body
+        <textarea id="body" rows="8" placeholder='{"example": true}'></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="btn">Send</button>
+        <button type="button" id="abort-btn" class="btn subtle" disabled>Abort</button>
+      </div>
     </form>
   </main>
 </body>
