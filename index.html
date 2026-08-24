@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header class="top">
@@ -50,6 +51,11 @@
         <button type="button" id="abort-btn" class="btn subtle" disabled>Abort</button>
       </div>
     </form>
+
+    <section class="panel" aria-live="polite">
+      <div class="meta" id="meta">Ready.</div>
+      <pre id="response" class="response">No response yet.</pre>
+    </section>
   </main>
 </body>
 </html>
