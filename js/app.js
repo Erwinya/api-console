@@ -34,6 +34,14 @@ abortBtn.addEventListener("click", () => {
   if (controller) controller.abort();
 });
 
+// Ctrl/Cmd+Enter submits the request form from any field.
+form.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {
+    event.preventDefault();
+    form.requestSubmit();
+  }
+});
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const method = document.getElementById("method").value;
