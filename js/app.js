@@ -42,6 +42,14 @@ form.addEventListener("keydown", (event) => {
   }
 });
 
+// Escape aborts an in-flight request.
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && controller) {
+    event.preventDefault();
+    controller.abort();
+  }
+});
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const method = document.getElementById("method").value;

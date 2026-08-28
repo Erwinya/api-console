@@ -22,7 +22,7 @@
       <div class="row">
         <label>
           Method
-          <select id="method" name="method">
+          <select id="method" name="method" aria-label="HTTP method">
             <option>GET</option>
             <option>POST</option>
             <option>PUT</option>
@@ -32,18 +32,18 @@
         </label>
         <label class="grow">
           URL
-          <input id="url" name="url" type="url" required placeholder="https://httpbingo.org/get" value="https://httpbingo.org/get" />
+          <input id="url" name="url" type="url" required placeholder="https://httpbingo.org/get" value="https://httpbingo.org/get" aria-label="Request URL" />
         </label>
       </div>
 
       <label>
         Headers (one per line: Name: Value)
-        <textarea id="headers" rows="4" placeholder="Accept: application/json"></textarea>
+        <textarea id="headers" rows="4" placeholder="Accept: application/json" aria-label="Request headers"></textarea>
       </label>
 
       <label>
         Body
-        <textarea id="body" rows="8" placeholder='{"example": true}'></textarea>
+        <textarea id="body" rows="8" placeholder='{"example": true}' aria-label="Request body"></textarea>
       </label>
 
       <div class="actions">
@@ -52,9 +52,9 @@
       </div>
     </form>
 
-    <section class="panel" aria-live="polite">
+    <section class="panel" aria-live="polite" aria-label="Response">
       <div class="meta" id="meta">Ready.</div>
-      <pre id="response" class="response">No response yet.</pre>
+      <pre id="response" class="response" aria-label="Response body">No response yet.</pre>
     </section>
   </main>
   <script src="js/app.js"></script>
