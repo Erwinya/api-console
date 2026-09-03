@@ -14,6 +14,7 @@ Open `index.html` in a browser (or serve the folder with any static file server)
 4. **Send** — response status, timing, headers, and body appear on the right (or press `Ctrl+Enter` / `Cmd+Enter`)
 5. **Abort** cancels an in-flight request (or press `Escape` while a request is running)
 6. **Dark / Light** toggles the UI theme (preference is saved in the browser)
+7. **Copy** copies the latest response (headers + body) to the clipboard
 
 If the response panel stays empty, check the URL, CORS errors in the browser console, and whether the target API is reachable.
 

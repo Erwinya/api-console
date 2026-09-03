@@ -96,6 +96,12 @@ textarea, .response { font-family: var(--mono); font-size: 0.82rem; }
 }
 .btn.subtle { background: var(--input-bg); color: var(--ink); border: 1px solid var(--line); }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.response-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
 .meta { color: var(--muted); font-size: 0.9rem; }
 .response {
   margin: 0;
