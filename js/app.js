@@ -52,10 +52,26 @@ const form = document.getElementById("request-form");
 const meta = document.getElementById("meta");
 const responseEl = document.getElementById("response");
 const abortBtn = document.getElementById("abort-btn");
+const copyBtn = document.getElementById("copy-btn");
 let controller = null;
 
 abortBtn.addEventListener("click", () => {
   if (controller) controller.abort();
+});
+
+copyBtn?.addEventListener("click", async () => {
+  const text = responseEl.textContent || "";
+  if (!text || text === "No response yet.") return;
+  try {
+    await navigator.clipboard.writeText(text);
+    const previous = copyBtn.textContent;
+    copyBtn.textContent = "Copied";
+    setTimeout(() => {
+      copyBtn.textContent = previous;
+    }, 1200);
+  } catch (err) {
+    meta.textContent = `Copy failed: ${err.message || String(err)}`;
+  }
 });
 
 // Ctrl/Cmd+Enter submits the request form from any field.
@@ -91,6 +107,7 @@ form.addEventListener("submit", async (event) => {
 
   controller = new AbortController();
   abortBtn.disabled = false;
+  if (copyBtn) copyBtn.disabled = true;
   meta.textContent = "Sending…";
   responseEl.textContent = "";
 
@@ -112,10 +129,12 @@ form.addEventListener("submit", async (event) => {
       .join("\n");
     meta.textContent = `${res.status} ${res.statusText} · ${elapsed} ms`;
     responseEl.textContent = `${headerDump}\n\n${formatBody(res.headers.get("content-type"), text)}`;
+    if (copyBtn) copyBtn.disabled = false;
   } catch (err) {
     const elapsed = Math.round(performance.now() - started);
     meta.textContent = err.name === "AbortError" ? `Aborted · ${elapsed} ms` : `Error · ${elapsed} ms`;
     responseEl.textContent = err.message || String(err);
+    if (copyBtn) copyBtn.disabled = false;
   } finally {
     abortBtn.disabled = true;
     controller = null;
