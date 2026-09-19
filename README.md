@@ -8,6 +8,18 @@ Uses the Fetch API only (no backend, no framework).
 
 Open `index.html` in a browser (or serve the folder with any static file server).
 
+```bash
+python -m http.server 8080
+# then open http://127.0.0.1:8080/
+```
+
+Windows PowerShell:
+
+```powershell
+python -m http.server 8080
+# then open http://127.0.0.1:8080/
+```
+
 1. Pick method and URL (default: `https://httpbingo.org/get`)
 2. Optional headers — one per line: `Name: Value`
 3. Optional JSON body for POST/PUT/PATCH/DELETE
