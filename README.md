@@ -32,6 +32,11 @@ If the response panel stays empty, check the URL, CORS errors in the browser con
 
 Cross-origin calls depend on the target API's CORS policy.
 
+## CI
+
+GitHub Actions runs a Node syntax check on `js/app.js` and verifies required static files on push.
+
 ## License
 
 MIT
+
